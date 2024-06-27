@@ -24,9 +24,31 @@
             max-width: 800px;
             width: 90%;
         }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        .headshot {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 30px;
+            border: 3px solid #af4261;
+        }
+        .name-title {
+            text-align: left;
+        }
         h1 {
             color: #333;
-            margin-bottom: 20px;
+            margin: 0 0 10px 0;
+        }
+        .subtitle {
+            margin: 0;
+            font-size: 18px;
+            color: #666;
         }
         .button-container {
             display: flex;
@@ -57,13 +79,17 @@
             margin-top: 30px;
             text-align: left;
         }
-        
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Thomas Domask</h1>
-        <p styles="margin-bottom: 100px;">Subtitle</p>
+        <div class="header">
+            <img src="https://placeholder.com/150x150" alt="Thomas Domask" class="headshot">
+            <div class="name-title">
+                <h1>Thomas Domask</h1>
+                <p class="subtitle">Subtitle</p>
+            </div>
+        </div>
         <div class="button-container">
             <a href="#" class="button" id="about">About Me</a>
             <a href="#" class="button" id="projects">Projects</a>
