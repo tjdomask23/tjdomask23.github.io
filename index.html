@@ -1,2 +1,65 @@
-Hell there!
-General Kenobi...
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jane Doe's Portfolio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #f3ec78, #af4261);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .button {
+            padding: 15px 30px;
+            font-size: 18px;
+            text-decoration: none;
+            color: white;
+            border-radius: 50px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        #about { background-color: #ff6b6b; }
+        #projects { background-color: #4ecdc4; }
+        #resume { background-color: #45b7d1; }
+        #contact { background-color: #f7b731; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Jane Doe</h1>
+        <p>Web Developer & Designer</p>
+        <div class="button-container">
+            <a href="#" class="button" id="about">About Me</a>
+            <a href="#" class="button" id="projects">Projects</a>
+            <a href="#" class="button" id="resume">Resume</a>
+            <a href="#" class="button" id="contact">Contact</a>
+        </div>
+    </div>
+</body>
+</html>
