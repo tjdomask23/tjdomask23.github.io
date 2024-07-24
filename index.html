@@ -26,26 +26,27 @@
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-        body {
-            font-family: 'Arial', sans-serif;
+        html, body {
+            height: 100%;
             margin: 0;
             padding: 0;
+            overflow: hidden;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
             background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
             background-size: 400% 400%;
             animation: gradient 15s ease infinite;
-            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             color: var(--text-color);
-            overflow-x: hidden;
         }
         .main-container {
             display: flex;
             width: 90%;
             max-width: 1200px;
-            height: auto;
-            min-height: 80vh;
+            height: 90vh;
             align-items: center;
             padding: 20px;
             box-sizing: border-box;
@@ -82,9 +83,11 @@
         .content-container {
             flex: 1;
             max-width: 55%;
+            height: 100%;
             display: flex;
             justify-content: flex-start;
             align-items: center;
+            overflow-y: auto;
         }
         .content {
             background-color: var(--container-bg);
@@ -137,6 +140,7 @@
             .main-container {
                 flex-direction: column;
                 height: auto;
+                overflow-y: auto;
             }
             .image-container, .content-container {
                 max-width: 100%;
@@ -146,6 +150,9 @@
             }
             .image-wrapper {
                 padding-bottom: 75%; /* 4:3 aspect ratio */
+            }
+            .content-container {
+                overflow-y: visible;
             }
         }
     </style>
