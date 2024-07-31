@@ -1,1 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Thomas Domask</title>
+    <style>
+        : root {
+            --container-bg: rgba(255, 255, 255, 0.9);
+            --text-color: #333;
+            --subtitle-color: #666;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --border-color: rgba(255, 255, 255, 0.9);
+        }
+        @media (prefers-color-scheme: dark) {
+            : root {
+                --container-bg: rgba(30, 30, 30, 0.9);
+                --text-color: #f0f0f0;
+                --subtitle-color: #bbb;
+                --shadow-color: rgba(0, 0, 0, 0.3);
+                --border-color: rgba(30, 30, 30, 0.9);
+            }
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        HTML, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-color);
+        }
+        .main-container {
+            display: flex;
+            width: 95%;
+            height: 95vh;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .content-container {
+            flex: 1;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content {
+            background-color: var(--container-bg);
+            border-radius: 30px;
+            padding: 30px;
+            width: 100%;
+            max-height: 100%;
+            overflow-y: auto;
+            text-align: left;
+            box-shadow: 0 5px 15px var(--shadow-color);
+        }
+        h1 {
+            color: var(--text-color);
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 18px;
+            text-decoration: none;
+            color: white;
+            background-color: #ff6b6b;
+            border-radius: 50px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 20px;
+        }
+        .back-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px var(--shadow-color);
+        }
 
+        @media (max-width: 768px) {
+            body {
+                height: auto;
+                overflow-y: auto;
+            }
+            .main-container {
+                flex-direction: column;
+                height: auto;
+                width: 100%;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+            .content-container {
+                width: 100%;
+                height: auto;
+            }
+            .content {
+                max-height: none;
+                padding: 20px;
+            }
+            .back-button {
+                padding: 10px 20px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="content-container">
+            <div class="content">
+                <h1>About Thomas Domask</h1>
+                <p>Hello! I'm Thomas Domask, a passionate [your profession/field] based in [your location]. With [X] years of experience in [your industry/field], I've developed a keen interest in [specific areas of expertise or interest].</p>
+                
+                <p>My journey in [your field] began [brief background or how you started in your field]. Since then, I've had the opportunity to work on various projects, including [mention a few significant projects or achievements].</p>
+                
+                <p>What drives me is [your motivation or what you're passionate about in your work]. I believe in [your professional philosophy or approach to work], and I'm always eager to take on new challenges and learn new skills.</p>
+                
+                <p>Outside of work, I enjoy [your hobbies or interests]. These activities not only help me unwind but also contribute to my creative process and problem-solving skills in my professional life.</p>
+                
+                <p>I'm always open to new opportunities and collaborations. If you'd like to discuss a project or just want to connect, feel free to reach out!</p>
+                
+                <a href="index.html" class="back-button">Back to Home</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
