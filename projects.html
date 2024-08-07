@@ -1,3 +1,10 @@
+26 w UVB bulb
+65-70 degree water
+Mostly aquatic, the tank 1/3-1/2 full with an area out of the water for basking
+Eats crickets or otherwise every other day
+Something to hold moisture 
+Filtered water
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,39 +68,15 @@
             border-radius: 30px;
             padding: 30px;
             width: 100%;
-            height: 100%;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
+            max-height: 100%;
+            overflow-y: auto;
+            text-align: left;
             box-shadow: 0 5px 15px var(--shadow-color);
-        }
-        .header {
-            position: sticky;
-            top: 0;
-            background-color: var(--container-bg);
-            z-index: 10;
-            display: flex;
-            align-items: center;
-            padding-bottom: 20px;
-        }
-        .profile-picture {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 20px;
         }
         h1 {
             color: var(--text-color);
-            margin: 0;
-            flex-grow: 1;
+            margin: 0 0 20px 0;
             text-align: center;
-        }
-        .projects-container {
-            overflow-y: auto;
-            flex-grow: 1;
-            padding-right: 10px;
         }
         .project {
             margin-bottom: 30px;
@@ -120,9 +103,6 @@
             background-color: #4ecdc4;
             border-radius: 50px;
             transition: transform 0.3s, box-shadow 0.3s;
-            position: sticky;
-            bottom: 0;
-            align-self: center;
             margin-top: 20px;
         }
         .back-button:hover {
@@ -147,12 +127,12 @@
                 height: auto;
             }
             .content {
-                height: auto;
-                max-height: 90vh;
+                max-height: none;
+                padding: 20px;
             }
             .back-button {
-                position: static;
-                margin-top: 20px;
+                padding: 10px 20px;
+                font-size: 16px;
             }
         }
     </style>
@@ -161,32 +141,27 @@
     <div class="main-container">
         <div class="content-container">
             <div class="content">
-                <div class="header">
-                    <img src="profile-picture.jpg" alt="Profile Picture" class="profile-picture">
-                    <h1>My Projects</h1>
-                </div>
+                <h1>My Projects</h1>
                 
-                <div class="projects-container">
-                    <div class="project">
-                        <h2>Project 1: [Project Name]</h2>
-                        <p><strong>Description:</strong> [Brief description of the project, its goals, and your role]</p>
-                        <p><strong>Technologies Used:</strong> [List of technologies, languages, or tools used]</p>
-                        <p><strong>Outcome:</strong> [Results or impact of the project]</p>
-                    </div>
+                <div class="project">
+                    <h2>Project 1: [Project Name]</h2>
+                    <p><strong>Description:</strong> [Brief description of the project, its goals, and your role]</p>
+                    <p><strong>Technologies Used:</strong> [List of technologies, languages, or tools used]</p>
+                    <p><strong>Outcome:</strong> [Results or impact of the project]</p>
+                </div>
 
-                    <div class="project">
-                        <h2>Project 2: [Project Name]</h2>
-                        <p><strong>Description:</strong> [Brief description of the project, its goals, and your role]</p>
-                        <p><strong>Technologies Used:</strong> [List of technologies, languages, or tools used]</p>
-                        <p><strong>Outcome:</strong> [Results or impact of the project]</p>
-                    </div>
+                <div class="project">
+                    <h2>Project 2: [Project Name]</h2>
+                    <p><strong>Description:</strong> [Brief description of the project, its goals, and your role]</p>
+                    <p><strong>Technologies Used:</strong> [List of technologies, languages, or tools used]</p>
+                    <p><strong>Outcome:</strong> [Results or impact of the project]</p>
+                </div>
 
-                    <div class="project">
-                        <h2>Project 3: [Project Name]</h2>
-                        <p><strong>Description:</strong> [Brief description of the project, its goals, and your role]</p>
-                        <p><strong>Technologies Used:</strong> [List of technologies, languages, or tools used]</p>
-                        <p><strong>Outcome:</strong> [Results or impact of the project]</p>
-                    </div>
+                <div class="project">
+                    <h2>Project 3: [Project Name]</h2>
+                    <p><strong>Description:</strong> [Brief description of the project, its goals, and your role]</p>
+                    <p><strong>Technologies Used:</strong> [List of technologies, languages, or tools used]</p>
+                    <p><strong>Outcome:</strong> [Results or impact of the project]</p>
                 </div>
 
                 <a href="index.html" class="back-button">Back to Home</a>
