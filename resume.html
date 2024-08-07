@@ -1,1 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thomas Domask's Resume</title>
+    <style>
+        :root {
+            --container-bg: rgba(255, 255, 255, 0.9);
+            --text-color: #333;
+            --subtitle-color: #666;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --border-color: rgba(255, 255, 255, 0.9);
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --container-bg: rgba(30, 30, 30, 0.9);
+                --text-color: #f0f0f0;
+                --subtitle-color: #bbb;
+                --shadow-color: rgba(0, 0, 0, 0.3);
+                --border-color: rgba(30, 30, 30, 0.9);
+            }
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-color);
+        }
+        .main-container {
+            display: flex;
+            width: 95%;
+            height: 95vh;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .content-container {
+            flex: 1;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content {
+            background-color: var(--container-bg);
+            border-radius: 30px;
+            padding: 30px;
+            width: 100%;
+            max-height: 100%;
+            overflow-y: auto;
+            text-align: left;
+            box-shadow: 0 5px 15px var(--shadow-color);
+        }
+        h1 {
+            color: var(--text-color);
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        .resume-section {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--subtitle-color);
+        }
+        .resume-section:last-child {
+            border-bottom: none;
+        }
+        h2 {
+            color: var(--text-color);
+            margin-bottom: 10px;
+        }
+        p, ul {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 18px;
+            text-decoration: none;
+            color: white;
+            background-color: #4ecdc4;
+            border-radius: 50px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 20px;
+            margin-right: 10px;
+        }
+        .button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px var(--shadow-color);
+        }
 
+        @media (max-width: 768px) {
+            body {
+                height: auto;
+                overflow-y: auto;
+            }
+            .main-container {
+                flex-direction: column;
+                height: auto;
+                width: 100%;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+            .content-container {
+                width: 100%;
+                height: auto;
+            }
+            .content {
+                max-height: none;
+                padding: 20px;
+            }
+            .button {
+                padding: 10px 20px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="content-container">
+            <div class="content">
+                <h1>My Resume</h1>
+                
+                <div class="resume-section">
+                    <h2>Summary</h2>
+                    <p>[Your professional summary goes here]</p>
+                </div>
+
+                <div class="resume-section">
+                    <h2>Experience</h2>
+                    <h3>[Job Title] - [Company Name]</h3>
+                    <p>[Employment dates]</p>
+                    <ul>
+                        <li>[Responsibility/Achievement 1]</li>
+                        <li>[Responsibility/Achievement 2]</li>
+                        <li>[Responsibility/Achievement 3]</li>
+                    </ul>
+                    <!-- Repeat this structure for each job -->
+                </div>
+
+                <div class="resume-section">
+                    <h2>Education</h2>
+                    <h3>[Degree] in [Field of Study] - [University Name]</h3>
+                    <p>[Graduation Year]</p>
+                    <!-- Repeat this structure for each educational qualification -->
+                </div>
+
+                <div class="resume-section">
+                    <h2>Skills</h2>
+                    <ul>
+                        <li>[Skill 1]</li>
+                        <li>[Skill 2]</li>
+                        <li>[Skill 3]</li>
+                        <!-- Add more skills as needed -->
+                    </ul>
+                </div>
+
+                <a href="resume.pdf" class="button" download>Download PDF Resume</a>
+                <a href="index.html" class="button">Back to Home</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
