@@ -65,6 +65,8 @@
             overflow-y: auto;
             text-align: left;
             box-shadow: 0 5px 15px var(--shadow-color);
+            display: flex;
+            flex-wrap: wrap;
         }
         h1 {
             color: var(--text-color);
@@ -72,12 +74,10 @@
             text-align: center;
         }
         .skill-category {
+            flex: 1 0 50%;
             margin-bottom: 30px;
             padding-bottom: 20px;
             border-bottom: 1px solid var(--subtitle-color);
-        }
-        .skill-category:last-child {
-            border-bottom: none;
         }
         h2 {
             color: var(--text-color);
@@ -122,6 +122,9 @@
             .content {
                 max-height: none;
                 padding: 20px;
+            }
+            .skill-category {
+                flex: 1 0 100%;
             }
             .back-button {
                 padding: 10px 20px;
