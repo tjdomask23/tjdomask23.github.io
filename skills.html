@@ -41,7 +41,6 @@
             background-size: 400% 400%;
             animation: gradient 15s ease infinite;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             color: var(--text-color);
@@ -77,6 +76,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             grid-gap: 30px;
+            position: relative;
         }
 
         h1 {
@@ -152,8 +152,8 @@
 <body>
     <div class="main-container">
         <div class="content-container">
-            <h1>My Skills</h1>
             <div class="content">
+                <h1>My Skills</h1>
                 <div class="skill-category">
                     <h2>Programming Languages</h2>
                     <ul>
@@ -218,8 +218,9 @@
                         <li>Software testing and quality assurance</li>
                     </ul>
                 </div>
+
+                <a href="index.html" class="back-button">Back to Home</a>
             </div>
-            <a href="index.html" class="back-button">Back to Home</a>
         </div>
     </div>
 </body>
