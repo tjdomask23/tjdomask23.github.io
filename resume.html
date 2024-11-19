@@ -66,26 +66,20 @@
             text-align: left;
             box-shadow: 0 5px 15px var(--shadow-color);
         }
-        h1 {
-            color: var(--text-color);
-            margin: 0 0 20px 0;
-            text-align: center;
+        .pdf-container {
+            width: 100%;
+            height: 600px;
+            margin-bottom: 20px;
         }
-        .resume-section {
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--subtitle-color);
+        .pdf-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
-        .resume-section:last-child {
-            border-bottom: none;
-        }
-        h2 {
-            color: var(--text-color);
-            margin-bottom: 10px;
-        }
-        p, ul {
-            margin-bottom: 15px;
-            line-height: 1.6;
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
         }
         .button {
             display: inline-block;
@@ -96,8 +90,6 @@
             background-color: #4ecdc4;
             border-radius: 50px;
             transition: transform 0.3s, box-shadow 0.3s;
-            margin-top: 20px;
-            margin-right: 10px;
         }
         .button:hover {
             transform: translateY(-5px);
@@ -105,28 +97,8 @@
         }
 
         @media (max-width: 768px) {
-            body {
-                height: auto;
-                overflow-y: auto;
-            }
-            .main-container {
-                flex-direction: column;
-                height: auto;
-                width: 100%;
-                padding: 10px;
-                box-sizing: border-box;
-            }
-            .content-container {
-                width: 100%;
-                height: auto;
-            }
-            .content {
-                max-height: none;
-                padding: 20px;
-            }
-            .button {
-                padding: 10px 20px;
-                font-size: 16px;
+            .pdf-container {
+                height: 400px;
             }
         }
     </style>
@@ -135,77 +107,14 @@
     <div class="main-container">
         <div class="content-container">
             <div class="content">
-                <h1>Thomas Domask</h1>
+                <div class="pdf-container">
+                    <iframe src="domask_resume1206.pdf" width="100%" height="100%"></iframe>
+                </div>
                 
-                <div class="resume-section">
-                    <h2>Summary</h2>
-                    <p>[Your professional summary goes here]</p>
+                <div class="button-container">
+                    <a href="domask_resume1206.pdf" class="button" download>Download PDF Resume</a>
+                    <a href="index.html" class="button">Back to Home</a>
                 </div>
-
-                <div class="resume-section">
-                    <h2>Experience</h2>
-                    <h3>Business Systems Analyst, Sensing, Safety and Industrial Components, HPO - Rockwell Automation, Inc.</h3>
-                    <p>July 2023 - Present</p>
-                    <ul>
-                        <li>Subject Matter Expert in Jira Software.</li>
-                        <li>Analyzing current Jira and Agile practices to craft standards to be used across the entire business unit, including leading an Application Lifecycle Management Community of Practice monthly.</li>
-                        <li>Developing detailed documentation and training regime for implementing standards across the entire business unit.</li>
-                        <li>Applying process improvement methodologies to enhance efficiency and reduce waste in various projects and workflows while earning my Lean Six Sigma Transitional Yellow Belt certificate.</li>
-                        <li>Actively participating in the volunteer development and refinement of an internal innovation tool (Innovate App), demonstrating initiative beyond standard job responsibilities.</li>
-                    </ul>
-                    
-                    <h3>IT Administrator and Programmer | Department of Mechanical Engineering - Industrial Refrigeration Consortium (University of Wisconsin-Madison, Remote)</h3>
-                    <p>January 2023 - May 2023</p>
-                    <ul>
-                        <li>Located and addressed bugs in the IRC website and associated tools following an update to REFPROP10 which catalyzed a backlog of issues using efficient, clean, and well-documented code. (PHP, HTML/CSS, SQL)</li>
-                        <li>Conducted thorough testing and debugging to ensure software quality and reliability.</li>
-                        <li>Collaborated with stakeholders to gather requirements and provide technical assistance and expertise to users of IRC tools.</li>
-                    </ul>
-                    
-                    <h3>Computer Science Instructor - Juni Learning</h3>
-                    <p>December 2021 - May 2022</p>
-                    <ul>
-                        <li>Executed advanced computer science lesson plans ranging from basic data structures to applied programming over Zoom for students ages 8-18 while adapting to specific student needs and interests.</li>
-                        <li>Maintain thorough records for each student, covering multiple courses and skill level progressions.</li>
-                    </ul>
-                    
-                    <h3>Quality Assurance Intern - Batteries Plus Bulbs</h3>
-                    <p>May 2021 - August 2021</p>
-                    <ul>
-                        <li>Collaborated with an Agile team consisting of multiple different positions to assist in approximately 50% of the QA workload, including but not limited to: testing and providing feedback for new code implementations for the Batteries Plus Bulbs POS Systems (JavaScript, SQL).</li>
-                        <li>Attended and completed the following courses: Introduction to Postman, Introduction to SQL, and Introduction to JavaScript.</li>
-                    </ul>
-                </div>
-
-                <div class="resume-section">
-                    <h2>Education</h2>
-                    <h3>Bachelor of Arts, Computer Science - University of Wisconsin-Madison</h3>
-                    <p>May 2023</p>
-                </div>
-
-                <div class="resume-section">
-                    <h2>Projects</h2>
-                    <h3>Personal Portfolio Website</h3>
-                    <p>June 2024 – Present</p>
-                    <ul>
-                        <li>Currently designing and developing a personal website using cutting-edge web design methodologies.</li>
-                        <li>Implementing responsive design principles to ensure optimal performance across various devices and platforms.</li>
-                        <li>Leveraging advanced CSS animations and JavaScript frameworks to create an engaging user experience.</li>
-                        <li>Focusing on user-centric design, incorporating intuitive navigation and accessibility standards.</li>
-                        <li>Demonstrating proficiency in HTML5, CSS3, and modern web development tools to deliver a visually appealing and functional digital presence.</li>
-                    </ul>
-                    
-                    <h3>Tixplorer</h3>
-                    <p>March 2023 - July 2023</p>
-                    <ul>
-                        <li>Logging bugs in the current published site.</li>
-                        <li>Addressing any and all concerns/bugs as requested by the Product Owner which involves but is not limited to the entire software development lifecycle, from concept and design to implementation, testing, and deployment.</li>
-                        <li>Developing robust and scalable web applications and services using modern technologies, frameworks, and programming languages (JavaScript, TypeScript, React, ReactNative, HTML/CSS, AWS)</li>
-                    </ul>
-                </div>
-
-                <a href="resume.pdf" class="button" download>Download PDF Resume</a>
-                <a href="index.html" class="button">Back to Home</a>
             </div>
         </div>
     </div>
