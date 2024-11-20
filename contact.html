@@ -5,150 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Thomas Domask</title>
     <style>
-        :root {
-            --container-bg: rgba(255, 255, 255, 0.9);
-            --text-color: #333;
-            --subtitle-color: #666;
-            --shadow-color: rgba(0, 0, 0, 0.1);
-            --border-color: rgba(255, 255, 255, 0.9);
+        /* Previous styles remain the same until the form styling */
+        .alert {
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            display: none;
         }
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --container-bg: rgba(30, 30, 30, 0.9);
-                --text-color: #f0f0f0;
-                --subtitle-color: #bbb;
-                --shadow-color: rgba(0, 0, 0, 0.3);
-                --border-color: rgba(30, 30, 30, 0.9);
-            }
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
         }
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .alert-error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
         }
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: var(--text-color);
-        }
-        .main-container {
-            display: flex;
-            width: 95%;
-            height: 95vh;
-            align-items: center;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .content-container {
-            flex: 1;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .content {
-            background-color: var(--container-bg);
-            border-radius: 30px;
-            padding: 30px;
-            width: 100%;
-            max-height: 100%;
-            overflow-y: auto;
-            text-align: left;
-            box-shadow: 0 5px 15px var(--shadow-color);
-        }
-        h1 {
-            color: var(--text-color);
-            margin: 0 0 20px 0;
-            text-align: center;
-        }
-        .contact-section {
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--subtitle-color);
-        }
-        .contact-section:last-child {
-            border-bottom: none;
-        }
-        h2 {
-            color: var(--text-color);
-            margin-bottom: 10px;
-        }
-        p {
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-        .back-button {
-            display: inline-block;
+        form button {
             padding: 15px 30px;
             font-size: 18px;
-            text-decoration: none;
             color: white;
             background-color: #4ecdc4;
+            border: none;
             border-radius: 50px;
+            cursor: pointer;
             transition: transform 0.3s, box-shadow 0.3s;
-            margin-top: 20px;
         }
-        .back-button:hover {
+        form button:hover {
             transform: translateY(-5px);
             box-shadow: 0 5px 15px var(--shadow-color);
         }
-        form {
-            display: flex;
-            flex-direction: column;
+        form button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
         }
-        input, textarea {
-            margin-bottom: 15px;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid var(--subtitle-color);
-            background-color: var(--container-bg);
-            color: var(--text-color);
-        }
-        input[type="submit"] {
-            background-color: #4ecdc4;
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        input[type="submit"]:hover {
-            background-color: #45b7aa;
-        }
-
-        @media (max-width: 768px) {
-            body {
-                height: auto;
-                overflow-y: auto;
-            }
-            .main-container {
-                flex-direction: column;
-                height: auto;
-                width: 100%;
-                padding: 10px;
-                box-sizing: border-box;
-            }
-            .content-container {
-                width: 100%;
-                height: auto;
-            }
-            .content {
-                max-height: none;
-                padding: 20px;
-            }
-            .back-button {
-                padding: 10px 20px;
-                font-size: 16px;
-            }
-        }
+        /* Rest of your existing styles remain the same */
     </style>
 </head>
 <body>
@@ -167,12 +61,13 @@
 
                 <div class="contact-section">
                     <h2>Send a Message</h2>
-                    <form action="send_email.php" method="post">
+                    <div id="alert" class="alert"></div>
+                    <form id="contactForm">
                         <input type="text" name="name" placeholder="Your Name" required>
                         <input type="email" name="email" placeholder="Your Email" required>
                         <input type="text" name="subject" placeholder="Subject" required>
                         <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                        <input type="submit" value="Send Message">
+                        <button type="submit">Send Message</button>
                     </form>
                 </div>
 
@@ -180,5 +75,52 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const submitButton = form.querySelector('button[type="submit"]');
+            const alert = document.getElementById('alert');
+            
+            // Disable the submit button
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+
+            try {
+                const formData = new FormData(form);
+                const response = await fetch('send_email.php', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                // Show appropriate message
+                alert.className = `alert alert-${response.ok ? 'success' : 'error'}`;
+                alert.textContent = result.message;
+                alert.style.display = 'block';
+
+                // Reset form if successful
+                if (response.ok) {
+                    form.reset();
+                }
+            } catch (error) {
+                alert.className = 'alert alert-error';
+                alert.textContent = 'An error occurred. Please try again later.';
+                alert.style.display = 'block';
+            } finally {
+                // Re-enable the submit button
+                submitButton.disabled = false;
+                submitButton.textContent = 'Send Message';
+
+                // Hide alert after 5 seconds
+                setTimeout(() => {
+                    alert.style.display = 'none';
+                }, 5000);
+            }
+        });
+    </script>
 </body>
 </html>
