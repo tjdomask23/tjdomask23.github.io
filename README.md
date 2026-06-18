@@ -42,7 +42,7 @@ serves it automatically at https://tjdomask23.github.io.
 
 - Design tokens all live at the top of `style.css` (`:root`). Change a color
   there, it changes everywhere.
-- Replace the `TD` initials block in `index.html` with a real `<img>` when I
-  have a good photo.
+- The hero photo is `thomas.jpg`, cropped via `object-position` in the
+  `.portrait-img` rule. To re-aim the crop, tweak those two percentages.
 - Fill in real testimonials in `testimonials.html` as they come in — the
   template block is set up to copy.

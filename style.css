@@ -192,28 +192,33 @@ a { color: var(--accent); }
 }
 .hero .cta-row { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 2.2rem; }
 
-/* portrait blob in hero */
+/* portrait in hero — holds a real photo, gradient becomes the frame */
 .portrait {
-  width: clamp(120px, 22vw, 200px);
+  width: clamp(150px, 26vw, 260px);
   aspect-ratio: 1;
   border-radius: 26px;
-  background:
-    linear-gradient(145deg, var(--cyan), var(--violet));
+  background: linear-gradient(145deg, var(--cyan), var(--violet));
+  padding: 4px;
+  box-shadow: 0 20px 60px -20px color-mix(in srgb, var(--violet) 60%, transparent);
+  position: relative;
+}
+.portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* crop toward the subject (right side of the frame), not the wall */
+  object-position: 68% 28%;
+  border-radius: 22px;
+  display: block;
+}
+/* fallback styling if .portrait is still used with text initials */
+.portrait:not(:has(.portrait-img)) {
   display: grid;
   place-items: center;
   font-family: var(--display);
   font-weight: 600;
   font-size: clamp(2.2rem, 6vw, 3.4rem);
   color: var(--ink);
-  box-shadow: 0 20px 60px -20px color-mix(in srgb, var(--violet) 60%, transparent);
-  position: relative;
-}
-.portrait::after {
-  content: "";
-  position: absolute;
-  inset: 4px;
-  border-radius: 22px;
-  border: 1px solid rgba(255,255,255,0.25);
 }
 .hero-grid {
   display: grid;
