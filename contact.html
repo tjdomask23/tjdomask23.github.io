@@ -1,126 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Thomas Domask</title>
-    <style>
-        /* Previous styles remain the same until the form styling */
-        .alert {
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            display: none;
-        }
-        .alert-success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-        .alert-error {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-        form button {
-            padding: 15px 30px;
-            font-size: 18px;
-            color: white;
-            background-color: #4ecdc4;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        form button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px var(--shadow-color);
-        }
-        form button:disabled {
-            background-color: #cccccc;
-            cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
-        }
-        /* Rest of your existing styles remain the same */
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact · Thomas Domask</title>
+  <meta name="description" content="Get in touch with Thomas Domask — email, phone, LinkedIn, or the message form." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
-    <div class="main-container">
-        <div class="content-container">
-            <div class="content">
-                <h1>Contact Me</h1>
-                
-                <div class="contact-section">
-                    <h2>Get in Touch</h2>
-                    <p>Feel free to reach out to me using any of the following methods:</p>
-                    <p><strong>Email:</strong> <a href="mailto:tjdomask@yahoo.com">tjdomask@yahoo.com</a></p>
-                    <p><strong>Phone:</strong> (414) 852-0201</p>
-                    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/thomas-domask-cs/" target="_blank">https://www.linkedin.com/in/thomas-domask-cs/</a></p>
-                </div>
+  <div class="bg-mesh" aria-hidden="true"></div>
+  <div class="bg-grain" aria-hidden="true"></div>
 
-                <div class="contact-section">
-                    <h2>Send a Message</h2>
-                    <div id="alert" class="alert"></div>
-                    <form id="contactForm">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Your Email" required>
-                        <input type="text" name="subject" placeholder="Subject" required>
-                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                        <button type="submit">Send Message</button>
-                    </form>
-                </div>
-
-                <a href="index.html" class="back-button">Back to Home</a>
-            </div>
-        </div>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="index.html">thomas&nbsp;domask<span class="dot">_</span></a>
+      <button class="burger" aria-label="Toggle menu" aria-expanded="false">menu</button>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">home</a>
+        <a href="about.html">about</a>
+        <a href="experience.html">work</a>
+        <a href="education.html">education</a>
+        <a href="projects.html">projects</a>
+        <a href="testimonials.html">testimonials</a>
+        <a href="contact.html">contact</a>
+      </nav>
     </div>
+  </header>
 
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const form = e.target;
-            const submitButton = form.querySelector('button[type="submit"]');
-            const alert = document.getElementById('alert');
-            
-            // Disable the submit button
-            submitButton.disabled = true;
-            submitButton.textContent = 'Sending...';
+  <main>
+    <section class="section wrap">
+      <p class="eyebrow">07 — contact</p>
+      <h1>Let's talk</h1>
 
-            try {
-                const formData = new FormData(form);
-                const response = await fetch('send_email.php', {
-                    method: 'POST',
-                    body: formData
-                });
+      <div class="card-grid two" style="margin-top:2rem;align-items:start">
 
-                const result = await response.json();
+        <!-- direct lines -->
+        <div class="panel reveal">
+          <h3>The direct routes</h3>
+          <div class="contact-lines">
+            <a href="mailto:tjdomask@yahoo.com"><span class="k">email</span>tjdomask@yahoo.com</a>
+            <a href="tel:+14148520201"><span class="k">phone</span>(414) 852-0201</a>
+            <a href="https://www.linkedin.com/in/thomas-domask-cs/" target="_blank" rel="noopener"><span class="k">linkedin</span>/in/thomas-domask-cs</a>
+            <a href="https://github.com/tjdomask23" target="_blank" rel="noopener"><span class="k">github</span>tjdomask23</a>
+          </div>
+          <p style="margin-top:1.6rem">
+            Based in the Milwaukee area. Quickest reply is usually email.
+          </p>
+        </div>
 
-                // Show appropriate message
-                alert.className = `alert alert-${response.ok ? 'success' : 'error'}`;
-                alert.textContent = result.message;
-                alert.style.display = 'block';
+        <!-- message form -->
+        <div class="panel reveal">
+          <h3>Or send a message</h3>
 
-                // Reset form if successful
-                if (response.ok) {
-                    form.reset();
-                }
-            } catch (error) {
-                alert.className = 'alert alert-error';
-                alert.textContent = 'An error occurred. Please try again later.';
-                alert.style.display = 'block';
-            } finally {
-                // Re-enable the submit button
-                submitButton.disabled = false;
-                submitButton.textContent = 'Send Message';
+          <!-- ============================================================
+               This form posts to Web3Forms — a free service that lets a
+               static site (like GitHub Pages) send email without a backend.
+               GitHub Pages can't run PHP, so the old send_email.php won't
+               work here; this is the static-friendly replacement.
 
-                // Hide alert after 5 seconds
-                setTimeout(() => {
-                    alert.style.display = 'none';
-                }, 5000);
+               >>> SETUP (one step): <<<
+               1. Go to https://web3forms.com and enter your email
+                  (tjdomask@yahoo.com). They email you an Access Key.
+               2. Paste that key into the value="" below where it says
+                  PASTE_YOUR_WEB3FORMS_ACCESS_KEY_HERE.
+               Until you do that, the form will show an error on submit.
+               ============================================================ -->
+          <form id="contactForm" novalidate>
+            <input type="hidden" name="access_key" value="PASTE_YOUR_WEB3FORMS_ACCESS_KEY_HERE" />
+            <!-- where replies route + a nicer subject line in your inbox -->
+            <input type="hidden" name="subject" value="New message from your portfolio" />
+            <input type="hidden" name="from_name" value="Portfolio Contact Form" />
+            <!-- honeypot: bots fill this, humans never see it -->
+            <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
+
+            <div class="field">
+              <label for="name">your name</label>
+              <input id="name" name="name" type="text" required placeholder="Jane Smith" />
+            </div>
+            <div class="field">
+              <label for="email">your email</label>
+              <input id="email" name="email" type="email" required placeholder="jane@example.com" />
+            </div>
+            <div class="field">
+              <label for="msgsubject">subject</label>
+              <input id="msgsubject" name="msgsubject" type="text" required placeholder="What's this about?" />
+            </div>
+            <div class="field">
+              <label for="message">message</label>
+              <textarea id="message" name="message" required placeholder="Say hello…"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-solid" id="sendBtn">send message &rarr;</button>
+            <p class="status" id="status" role="status" aria-live="polite"></p>
+            <p class="formnote">
+              Form not wired up yet? You can always just
+              <a href="mailto:tjdomask@yahoo.com">email me directly</a>.
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot wrap">
+    <span>&copy; <span data-year>2025</span> Thomas Domask</span>
+    <span><a href="index.html">&larr; home</a></span>
+  </footer>
+
+  <script src="assets/site.js"></script>
+  <script>
+    // contact form handler. talks to Web3Forms, shows inline status.
+    // kept separate from site.js since it only matters on this page.
+    (function () {
+      var form = document.getElementById("contactForm");
+      var statusEl = document.getElementById("status");
+      var btn = document.getElementById("sendBtn");
+      if (!form) return;
+
+      function setStatus(msg, kind) {
+        statusEl.textContent = msg;
+        statusEl.className = "status " + (kind || "");
+      }
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        var key = form.elements["access_key"].value;
+        if (key.indexOf("PASTE_YOUR") === 0) {
+          setStatus("Form isn't configured yet — email me directly for now.", "bad");
+          return;
+        }
+
+        btn.disabled = true;
+        var original = btn.textContent;
+        btn.textContent = "sending…";
+        setStatus("");
+
+        // Web3Forms wants a flat field called "subject"; the visible
+        // subject the sender typed lives in msgsubject, so fold it in.
+        var data = new FormData(form);
+        var typed = data.get("msgsubject");
+        if (typed) { data.set("subject", "Portfolio: " + typed); }
+
+        fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: data
+        })
+          .then(function (r) { return r.json(); })
+          .then(function (res) {
+            if (res.success) {
+              setStatus("Sent — thanks, I'll get back to you.", "ok");
+              form.reset();
+            } else {
+              setStatus("Something went wrong. Try emailing me directly.", "bad");
             }
-        });
-    </script>
+          })
+          .catch(function () {
+            setStatus("Network error. Try emailing me directly.", "bad");
+          })
+          .finally(function () {
+            btn.disabled = false;
+            btn.textContent = original;
+          });
+      });
+    })();
+  </script>
 </body>
 </html>

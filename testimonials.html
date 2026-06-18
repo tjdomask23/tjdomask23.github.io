@@ -1,162 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thomas Domask's Testimonials</title>
-    <style>
-        :root {
-            --container-bg: rgba(255, 255, 255, 0.9);
-            --text-color: #333;
-            --subtitle-color: #666;
-            --shadow-color: rgba(0, 0, 0, 0.1);
-            --border-color: rgba(255, 255, 255, 0.9);
-        }
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --container-bg: rgba(30, 30, 30, 0.9);
-                --text-color: #f0f0f0;
-                --subtitle-color: #bbb;
-                --shadow-color: rgba(0, 0, 0, 0.3);
-                --border-color: rgba(30, 30, 30, 0.9);
-            }
-        }
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: var(--text-color);
-        }
-        .main-container {
-            display: flex;
-            width: 95%;
-            height: 95vh;
-            align-items: center;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .content-container {
-            flex: 1;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .content {
-            background-color: var(--container-bg);
-            border-radius: 30px;
-            padding: 30px;
-            width: 100%;
-            max-height: 100%;
-            overflow-y: auto;
-            text-align: left;
-            box-shadow: 0 5px 15px var(--shadow-color);
-        }
-        h1 {
-            color: var(--text-color);
-            margin: 0 0 20px 0;
-            text-align: center;
-        }
-        .testimonial {
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--subtitle-color);
-        }
-        .testimonial:last-child {
-            border-bottom: none;
-        }
-        h2 {
-            color: var(--text-color);
-            margin-bottom: 10px;
-        }
-        p {
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-        .back-button {
-            display: inline-block;
-            padding: 15px 30px;
-            font-size: 18px;
-            text-decoration: none;
-            color: white;
-            background-color: #4ecdc4;
-            border-radius: 50px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            margin-top: 20px;
-        }
-        .back-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px var(--shadow-color);
-        }
-
-        @media (max-width: 768px) {
-            body {
-                height: auto;
-                overflow-y: auto;
-            }
-            .main-container {
-                flex-direction: column;
-                height: auto;
-                width: 100%;
-                padding: 10px;
-                box-sizing: border-box;
-            }
-            .content-container {
-                width: 100%;
-                height: auto;
-            }
-            .content {
-                max-height: none;
-                padding: 20px;
-            }
-            .back-button {
-                padding: 10px 20px;
-                font-size: 16px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testimonials · Thomas Domask</title>
+  <meta name="description" content="What former managers and colleagues have to say." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    /* page-local: quote styling. only used here, so it lives here. */
+    .quote { position: relative; }
+    .quote .mark {
+      font-family: var(--display);
+      font-size: 3.5rem;
+      line-height: 0.5;
+      color: var(--accent);
+      opacity: 0.5;
+    }
+    .quote blockquote {
+      margin: 0.6rem 0 1.2rem;
+      font-size: 1.12rem;
+      color: var(--paper);
+      font-style: italic;
+    }
+    .quote .who { font-family: var(--mono); font-size: 0.8rem; color: var(--paper-dim); }
+    .quote .who strong { color: var(--accent); font-style: normal; }
+    .pending {
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      color: var(--paper-faint);
+      border: 1px dashed var(--panel-line);
+      border-radius: 10px;
+      padding: 0.9rem 1.1rem;
+      margin-top: 0.6rem;
+    }
+  </style>
 </head>
 <body>
-    <div class="main-container">
-        <div class="content-container">
-            <div class="content">
-                <h1>Testimonials</h1>
-                
-                <div class="testimonial">
-                    <h2>[Name or Title of Person]</h2>
-                    <p><strong>Position:</strong> [Their position or relationship to you]</p>
-                    <p><strong>Testimonial:</strong> "[Their testimonial about your work or skills]"</p>
-                </div>
+  <div class="bg-mesh" aria-hidden="true"></div>
+  <div class="bg-grain" aria-hidden="true"></div>
 
-                <div class="testimonial">
-                    <h2>[Name or Title of Person]</h2>
-                    <p><strong>Position:</strong> [Their position or relationship to you]</p>
-                    <p><strong>Testimonial:</strong> "[Their testimonial about your work or skills]"</p>
-                </div>
-
-                <div class="testimonial">
-                    <h2>[Name or Title of Person]</h2>
-                    <p><strong>Position:</strong> [Their position or relationship to you]</p>
-                    <p><strong>Testimonial:</strong> "[Their testimonial about your work or skills]"</p>
-                </div>
-
-                <a href="index.html" class="back-button">Back to Home</a>
-            </div>
-        </div>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="index.html">thomas&nbsp;domask<span class="dot">_</span></a>
+      <button class="burger" aria-label="Toggle menu" aria-expanded="false">menu</button>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">home</a>
+        <a href="about.html">about</a>
+        <a href="experience.html">work</a>
+        <a href="education.html">education</a>
+        <a href="projects.html">projects</a>
+        <a href="testimonials.html">testimonials</a>
+        <a href="contact.html">contact</a>
+      </nav>
     </div>
+  </header>
+
+  <main>
+    <section class="section wrap">
+      <p class="eyebrow">06 — testimonials</p>
+      <h1>In other people's words</h1>
+      <p class="lede" style="max-width:54ch">
+        I'd rather you hear it from the people I've worked with than
+        from me. Collecting these now — references available on request
+        in the meantime.
+      </p>
+    </section>
+
+    <section class="section wrap">
+      <div class="card-grid">
+
+        <!-- TEMPLATE — duplicate this block and fill in a real quote.
+             Keep it real: a name, a role, and something they'd actually
+             stand behind. Empty quotes are worse than no section. -->
+        <div class="panel quote reveal">
+          <span class="mark" aria-hidden="true">&ldquo;</span>
+          <div class="pending">
+            Reaching out to a former manager at Rockwell for this one.
+            Quote dropping in here soon.
+          </div>
+          <p class="who" style="margin-top:1rem"><strong>[ Name ]</strong> · [ Role, Rockwell Automation ]</p>
+        </div>
+
+        <div class="panel quote reveal">
+          <span class="mark" aria-hidden="true">&ldquo;</span>
+          <div class="pending">
+            From a teammate on the Tixplorer build. Pending.
+          </div>
+          <p class="who" style="margin-top:1rem"><strong>[ Name ]</strong> · [ Role, Tixplorer ]</p>
+        </div>
+
+        <div class="panel quote reveal">
+          <span class="mark" aria-hidden="true">&ldquo;</span>
+          <div class="pending">
+            From the IRC team at UW-Madison. Pending.
+          </div>
+          <p class="who" style="margin-top:1rem"><strong>[ Name ]</strong> · [ Role, UW-Madison IRC ]</p>
+        </div>
+
+      </div>
+
+      <p class="formnote" style="margin-top:2rem">
+        Worked with me and want to add a few words? <a href="contact.html">Send them over</a> &mdash; I'd be glad to include them.
+      </p>
+    </section>
+  </main>
+
+  <footer class="foot wrap">
+    <span>&copy; <span data-year>2025</span> Thomas Domask</span>
+    <span><a href="index.html">&larr; home</a></span>
+  </footer>
+
+  <script src="assets/site.js"></script>
 </body>
 </html>

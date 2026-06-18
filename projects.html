@@ -1,160 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thomas Domask's Projects</title>
-    <style>
-        :root {
-            --container-bg: rgba(255, 255, 255, 0.9);
-            --text-color: #333;
-            --subtitle-color: #666;
-            --shadow-color: rgba(0, 0, 0, 0.1);
-            --border-color: rgba(255, 255, 255, 0.9);
-        }
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --container-bg: rgba(30, 30, 30, 0.9);
-                --text-color: #f0f0f0;
-                --subtitle-color: #bbb;
-                --shadow-color: rgba(0, 0, 0, 0.3);
-                --border-color: rgba(30, 30, 30, 0.9);
-            }
-        }
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: var(--text-color);
-        }
-        .main-container {
-            display: flex;
-            width: 95%;
-            height: 95vh;
-            align-items: center;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .content-container {
-            flex: 1;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .content {
-            background-color: var(--container-bg);
-            border-radius: 30px;
-            padding: 30px;
-            width: 100%;
-            max-height: 100%;
-            overflow-y: auto;
-            text-align: left;
-            box-shadow: 0 5px 15px var(--shadow-color);
-        }
-        h1 {
-            color: var(--text-color);
-            margin: 0 0 20px 0;
-            text-align: center;
-        }
-        .project {
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--subtitle-color);
-        }
-        .project:last-child {
-            border-bottom: none;
-        }
-        h2 {
-            color: var(--text-color);
-            margin-bottom: 10px;
-        }
-        p {
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-        .back-button {
-            display: inline-block;
-            padding: 15px 30px;
-            font-size: 18px;
-            text-decoration: none;
-            color: white;
-            background-color: #4ecdc4;
-            border-radius: 50px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            margin-top: 20px;
-        }
-        .back-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px var(--shadow-color);
-        }
-
-        @media (max-width: 768px) {
-            body {
-                height: auto;
-                overflow-y: auto;
-            }
-            .main-container {
-                flex-direction: column;
-                height: auto;
-                width: 100%;
-                padding: 10px;
-                box-sizing: border-box;
-            }
-            .content-container {
-                width: 100%;
-                height: auto;
-            }
-            .content {
-                max-height: none;
-                padding: 20px;
-            }
-            .back-button {
-                padding: 10px 20px;
-                font-size: 16px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects · Thomas Domask</title>
+  <meta name="description" content="Side projects: FORMA fitness platform, a homebrew tabletop RPG system, Tixplorer, and this site." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
-    <div class="main-container">
-        <div class="content-container">
-            <div class="content">
-                <h1>My Projects</h1>
-                
-                <div class="project">
-                    <h2>Personal Portfolio Website</h2>
-                    <p><strong>Description:</strong> Currently designing and developing a personal website using cutting-edge web design methodologies. The project focuses on creating a comprehensive digital showcase of professional skills and projects.</p>
-                    <p><strong>Technologies Used:</strong> HTML5, CSS3, JavaScript, Responsive Design Techniques</p>
-                    <p><strong>Outcome:</strong> Implementing responsive design principles to ensure optimal performance across various devices, with advanced CSS animations and intuitive navigation to create an engaging user experience.</p>
-                    <p><strong>Project Timeline:</strong> June 2024 – Present</p>
-                </div>
+  <div class="bg-mesh" aria-hidden="true"></div>
+  <div class="bg-grain" aria-hidden="true"></div>
 
-                <div class="project">
-                    <h2>Tixplorer</h2>
-                    <p><strong>Description:</strong> Contributed to the development and maintenance of a web application, focusing on comprehensive software development lifecycle management.</p>
-                    <p><strong>Technologies Used:</strong> JavaScript, TypeScript, React, React Native, HTML/CSS, AWS</p>
-                    <p><strong>Outcome:</strong> Systematically logged and addressed bugs, developed robust web applications and services, and collaborated closely with Product Owner to ensure high-quality software delivery.</p>
-                    <p><strong>Project Timeline:</strong> March 2023 - July 2023</p>
-                </div>
-
-                <a href="index.html" class="back-button">Back to Home</a>
-            </div>
-        </div>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="index.html">thomas&nbsp;domask<span class="dot">_</span></a>
+      <button class="burger" aria-label="Toggle menu" aria-expanded="false">menu</button>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">home</a>
+        <a href="about.html">about</a>
+        <a href="experience.html">work</a>
+        <a href="education.html">education</a>
+        <a href="projects.html">projects</a>
+        <a href="testimonials.html">testimonials</a>
+        <a href="contact.html">contact</a>
+      </nav>
     </div>
+  </header>
+
+  <main>
+    <section class="section wrap">
+      <p class="eyebrow">05 — projects</p>
+      <h1>What I build on my own time</h1>
+      <p class="lede" style="max-width:56ch">
+        These aren't assignments. They're the things I picked up because
+        I wanted them to exist — which usually means I cared enough to
+        finish the unglamorous parts.
+      </p>
+    </section>
+
+    <section class="section wrap">
+      <div class="card-grid">
+
+        <!-- FORMA: the flagship -->
+        <article class="panel proj reveal">
+          <p class="meta">in active development</p>
+          <h3>FORMA — research-backed fitness platform</h3>
+          <p>
+            A web app that generates personalized body-recomposition plans
+            from a detailed intake — not the one-size-fits-all template most
+            fitness apps ship. A 114-question questionnaire feeds a plan
+            generator that produces meal planning, weekly scheduling, and
+            grocery budgeting, with every recommendation tied back to actual
+            research rather than gym-bro folklore. That citation layer is the
+            whole differentiator.
+          </p>
+          <p>
+            I'm building the full stack: Next.js front end, Supabase for data
+            and auth, the Anthropic API driving plan generation, and Stripe
+            wired in for when it's ready to charge. It started as a plan I
+            built for myself and turned into the product I wished existed.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Next.js</span>
+            <span class="tag">Tailwind</span>
+            <span class="tag">Supabase</span>
+            <span class="tag">Anthropic API</span>
+            <span class="tag">Stripe</span>
+          </div>
+        </article>
+
+        <!-- Homebrew TTRPG system -->
+        <article class="panel proj reveal">
+          <p class="meta">ongoing · played live with a real table</p>
+          <h3>Homebrew tabletop RPG system</h3>
+          <p>
+            A complete from-scratch RPG ruleset I designed and run for a group
+            of five — most recently a campaign set in the Star Wars: The High
+            Republic era (232 BBY). "Homebrew" undersells it: custom classes
+            and subclasses, playable species, a weapons-and-crafting system,
+            tiered armor, and a character-flaw mechanic where personality
+            actually changes how the dice behave.
+          </p>
+          <p>
+            It scratches the same itch as my day job, honestly — designing a
+            system of rules that's balanced enough to be fair and flexible
+            enough that real people enjoy using it. The feedback loop is just
+            a lot more fun: you find out at the table, immediately, what's
+            broken.
+          </p>
+          <div class="tag-row">
+            <span class="tag">systems design</span>
+            <span class="tag">game balance</span>
+            <span class="tag">worldbuilding</span>
+            <span class="tag">documentation</span>
+          </div>
+        </article>
+
+        <!-- Tixplorer -->
+        <article class="panel proj reveal">
+          <p class="meta">Mar 2023 — Jul 2023</p>
+          <h3>Tixplorer</h3>
+          <p>
+            Full-stack work on a live web application: shipping features end to
+            end, improving performance ~40%, and clearing 25+ production bugs
+            alongside the Product Owner. The role that taught me what the
+            software lifecycle feels like once real users are on the other end.
+          </p>
+          <div class="tag-row">
+            <span class="tag">React</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">React Native</span>
+            <span class="tag">AWS</span>
+          </div>
+        </article>
+
+        <!-- This site -->
+        <article class="panel proj reveal">
+          <p class="meta">2025</p>
+          <h3>This portfolio</h3>
+          <p>
+            Hand-built, no framework and no template — one shared stylesheet
+            with a real token system, a vanilla-JS sprinkle for nav and
+            scroll reveals, and an animated mesh-gradient background that
+            (unlike my old site) doesn't try to give you a headache. Hosted on
+            GitHub Pages. The source is right there if you want to read it.
+          </p>
+          <div class="tag-row">
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS (custom props)</span>
+            <span class="tag">vanilla JS</span>
+            <span class="tag">GitHub Pages</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot wrap">
+    <span>&copy; <span data-year>2025</span> Thomas Domask</span>
+    <span><a href="index.html">&larr; home</a></span>
+  </footer>
+
+  <script src="assets/site.js"></script>
 </body>
 </html>
